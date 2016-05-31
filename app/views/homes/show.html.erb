@@ -1,0 +1,34 @@
+<h3><%= @home.status %></h3>
+<hr />
+
+<span>Name:</span>
+<span> <%= @home.name %> </span>
+<br />
+
+<span>Square Footage:</span>
+<span> <%= @home.square_feet %> </span>
+<br />
+
+<span>Beds:</span>
+<span> <%= @home.beds %> </span>
+<br />
+
+<span>Baths:</span>
+<span> <%= @home.baths %> </span>
+<br />
+
+<span>Price:</span>
+<span> <%= @home.price %> </span>
+<br />
+
+
+<%= link_to 'Address', addresses_path(@homes, @addresses) %>
+
+<hr />
+
+<%= link_to 'Edit', edit_seller_home_path(@seller, @home) %>
+
+<%= link_to 'Delete', seller_home_path(@seller, @home), method: :delete, data: {confirm: 'Really delete?'} %>
+
+<%= link_to "#{@seller.name}'s homes", seller_homes_path(@seller) %>
+

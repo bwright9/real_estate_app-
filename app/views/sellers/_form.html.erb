@@ -1,0 +1,25 @@
+<% if @seller.errors.any? %>
+  <div class='red-text'>
+    <h3>Errors:</h3>
+    <ul>
+      <% @seller.errors.full_messages.each do |message| %>
+        <li>
+          <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @seller do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.submit %>
+<% end %>
